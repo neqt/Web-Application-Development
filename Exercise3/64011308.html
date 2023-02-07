@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>One Page Magazine</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .appetiser-img img,
+      .soup-img img,
+      .main-course-img img,
+      .dessert-img img{
+        width: 100%;
+        filter: grayscale(1)
+      }
+      .hover {
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 60%;
+      }
+      .hover-overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 90;
+        transition: all 0.4s;
+      }
+      .hover img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.3s;
+      }
+      .hover-content {
+        position: relative;
+        z-index: 99;
+      }
+      .hover .hover-overlay {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+      }
+      .hover-title {
+        position: absolute;
+        top: 75%;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        z-index: 99;
+        transition: all 0.3s;
+      }
+      .hover:hover .hover-title {
+        transform: translateY(-1rem);
+        color: whitesmoke;
+      }
+      .hover:hover .hover-overlay {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header" class="header sticky-top bg-white">
+      <div class="container">
+        <nav
+        class="site-header navbar navbar-expand-lg navbar-light"
+        >
+            <a href="64011308.html" class="navbar-brand"><b>WASHOKU, 和食</b></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navmenu"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a href="#hero" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#ingredients" class="nav-link">Ingredients</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    href="#beginners"
+                    class="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    role="button"
+                    aria-expanded="false"
+                    >Beginners</a
+                  >
+                  <ul class="dropdown-menu border-light">
+                    <li><a class="dropdown-item" href="#appetiser">Appetiser</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#soup">Soup</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#main-course">Main course</a>
+                    </li>
+                    <li><hr class="dropdown-divider text-light" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#dessert">Dessert</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a href="#menu" class="nav-link">Menu</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section id="hero" class="hero align-items-center section-bg">
+      <div
+        class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
+      >
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+          <h1 class="display-4 font-weight-normal">Japanese Cuisine</h1>
+          <p class="lead font-weight-normal">
+            offers an abundance of gastronomical delights with a boundless variety of regional and seasonal dishes. Many restaurants are specialized in a single type of dish, while others offer a variety of dishes.  
+          </p>
+          <a class="btn btn-outline-secondary" href="#about">LET'S EXPLORE!</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-12 col-12 pb-5">
+            <div class="about-img">
+              <img class="img-fluid" src="https://i.pinimg.com/564x/ba/d0/be/bad0befa3e466a014f63071fabb4f1f2.jpg" alt="about-img">
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-12 col-12 pt-4 pb-5 ps-lg-5 mt-md-5">
+            <div class="about-text">
+              <p class="fs-5 fw-light">The Japanese chef is precise and driven. He often prepares the same dish year in, year out, as a result of which the Japanese cuisine as a whole has become refined and perfected. Over the centuries, Japanese people have built up a great culinary tradition. This tradition was recognised by UNESCO in 2013 when it was added to the list of intangible (“living”) cultural heritage.Japanese restaurants are also super-specialised. Contrary to what we are used to in the West, you won’t find an extensive selection of different dishes in most Japanese restaurants.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ingredients" class="ingredients section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-header text-center pb-5 mt-5 pt-5">
+              <h2 class="display-5">Typical ingredients</h2>
+              <p class="lead font-weight-normal">Japanese cuisine would not be Japanese cuisine without three important components :<br>
+              rice, soybeans and liquid seasonings.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-4 pb-5">
+            <div class="card rounded-3 text-white text-center bg-dark py-2 mx-auto">
+              <div class="card-body">
+                <i class="bi bi-egg text-white-50"></i>
+                <h3 class="card-title text-white-50 text-uppercase fw-bolder py-3">Rice</h3>
+                <p class="lead fs-6">
+                  Rice forms the basis of every meal in Japan. The Japanese love it and eat it in many forms, from onigiri to mochi (rice balls and elastic dough balls). Japanese rice (japonica rice or Japanese hakumai) is a short-grain rice that is firm and slightly sticky after cooking. It must be rinsed well several times and then soaked.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-4 pb-5">
+            <div class="card rounded-3 text-white text-center bg-dark py-2">
+              <div class="card-body">
+                <i class="bi bi-meta text-white-50"></i>
+                <h3 class="card-title text-white-50 text-uppercase fw-bolder py-3">Soybeans</h3>
+                <p class="lead fs-6">
+                  There are numerous ways in which soybeans are used in Japanese cuisine. Completely pure, young and fresh from the plant as edamame, for example, or fermented as natto, shoyu (soy sauce) or miso. Tofu is made from curdled soy milk, which can then be grilled (atsuage) or deep-fried and used as a cover (aburaage).
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-4 pb-5">
+            <div class="card rounded-3 text-white text-center bg-dark py-2">
+              <div class="card-body">
+                <i class="bi bi-paint-bucket text-white-50"></i>
+                <h3 class="card-title text-white-50 text-uppercase fw-bolder py-3">Liquid flavourings</h3>
+                <p class="lead fs-6">
+                  Japanese cuisine does not include sauces as we know them but uses a lot of liquid flavourings.<br>
+                  Shoyu (soy sauce) is the best known. This sauce, made from good quality soybeans, roasted crushed wheat, sea salt and spring water, is used in small quantities – never too much, that would be too dominant.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beginners" class="beginners section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-12 col-12 py-5 mt-5">
+            <div class="beginners-head">
+              <h2 class="display-5 text-end">For beginners</h2>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-12 col-12 py-5 ps-lg-5 mt-md-5">
+            <div class="beginners-text">
+              <p class="lead fw-light">If you are new to Japanese cuisine, try the following menu for an insight into what the country has to offer :</p>
+            </div>
+          </div>
+        </div>
+        <div id="appetiser" class="row">
+          <div class="col-lg-8 col-md-12 col-12 py-5">
+            <h3 class="display-6 text-end">Appetiser<br><i class="fs-4">EDAMAME</i></h3>
+            <p class="lead fw-light text-end">Edamame are young soybeans that are cooked or steamed in their pods and sprinkled with salt. You eat them directly from the pod. In the West, we usually eat edamame as a starter or side dish, but for the Japanese, they make the ideal snack.</p>
+          </div>
+          <div class="col-lg-4 col-md-12 col-12 ps-lg-3">
+            <div class="appetiser-img">
+              <img src="https://i.pinimg.com/564x/ad/2d/e9/ad2de9d0c0e489bfe9b4fa7b6c067f7b.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div id="soup" class="row">
+          <div class="col-lg-8 col-md-12 col-12 py-5">
+            <h3 class="display-6 text-end">Soup<br><i class="fs-4">MISO SOUP</i></h3>
+            <p class="lead fw-light text-end">Miso soup is made from the traditional Japanese ingredient miso, or fermented soybean paste. The miso is mixed with dashi, a broth made from kelp and bonito flakes, to make miso soup or misoshiru. Usually cubes of tofu and dried seaweed are added.</p>
+          </div>
+          <div class="col-lg-4 col-md-12 col-12 ps-lg-3">
+            <div class="soup-img">
+              <img src="https://i.pinimg.com/564x/94/28/3e/94283e53d57ec02ab9c79e55eb7d7fae.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div id="main-course" class="row">
+          <div class="col-lg-8 col-md-12 col-12 py-5">
+            <h3 class="display-6 text-end">Main course<br><i class="fs-4">SUSHI</i></h3>
+            <p class="lead fw-light text-end">Sushi is the most famous dish of Japan, consisting of lukewarm rice that’s flavoured with sushi vinegar, then combined with another ingredient like raw fish or vegetables that’s placed on top or rolled. Rolled sushi has a layer of seafood on the outside.</p>
+          </div>
+          <div class="col-lg-4 col-md-12 col-12 ps-lg-3">
+            <div class="main-course-img">
+              <img src="https://i.pinimg.com/564x/d6/ff/22/d6ff223eebca531a69053f088d51f14c.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div id="dessert" class="row">
+          <div class="col-lg-8 col-md-12 col-12 py-5">
+            <h3 class="display-6 text-end">Dessert<br><i class="fs-4">MOCHI ICE CREAM</i></h3>
+            <p class="lead fw-light text-end">To make Japanese dish mochi ice cream, mochi dough, a sticky sweet dough made from Japanese glutinous rice, is stretched or rolled and wrapped around scoops of ice cream. It is both a cooling dessert and a summer indulgence in Japan.</p>
+          </div>
+          <div class="col-lg-4 col-md-12 col-12 ps-lg-3">
+            <div class="dessert-img">
+              <img src="https://i.pinimg.com/564x/51/d1/b1/51d1b10537feecefd165b949400c7870.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-header text-center pb-5 mt-5 pt-5">
+              <h2 class="display-5">Dishes and drinks</h2>
+              <p class="lead font-weight-normal">Japanese cuisine has a large variety of dishes and regional specialties. Below is a selection of our most popular food pages.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/ff/3e/04/ff3e04f691659d13f766f207fc4ea174.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  sushi
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/13/51/cc/1351cc0474222025eb0dbb34b106813f.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  bento
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/50/1b/32/501b3212074b3406ae1db409ab0bf353.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  ramen
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/6b/42/43/6b4243524f62a5cabcadebae22042153.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  sashimi
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/aa/ab/f0/aaabf085f83d9801ff421c461d1df91b.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  nabe
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/cf/69/fd/cf69fd05c12e42efd181a3123cf1220c.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  soba
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/1f/cc/80/1fcc8069a904bbd7b56f5b98b6a7aa9a.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  tempura
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/f7/6f/0c/f76f0c9c62bb7d9210a8f2183fc621b7.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  udon
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/e6/bb/c9/e6bbc9f2bf55e29dbbb9c7e9fbac8cf6.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  donburi
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/80/8f/b8/808fb866a83ccd196c6597664a7cf4a8.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  tonkatsu
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/43/64/5b/43645bb78fdc16e079d375ec9a378bfc.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  yakiniku
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/98/9f/a8/989fa871783975f3894766335819adc6.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  japanese curry
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/44/9e/e6/449ee6ce8a4c122172a767879a8755d8.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  onigiri
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/ad/8c/5a/ad8c5a4de97fb35f02a23df46e9c8d55.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  okonomiyaki
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/38/e6/ea/38e6ea9ca014985a87184a155d1e6977.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  takoyaki
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/0f/a7/1a/0fa71a436e723eae3b29a1ece56dcd9f.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  oden
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/50/80/c3/5080c315529f756ec8e0560f1bccb8d8.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  natto
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/29/d4/ee/29d4eeaee84071000161b894ec85ee58.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  dorayaki
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/09/e0/f5/09e0f5ad06918cbe17ff375a2733a6cc.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  matcha green tea
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-4">
+            <div class="hover text-white-50 rounded-3">
+              <img src="https://i.pinimg.com/564x/73/b7/f3/73b7f389a4a09f76b1f68c9df26c0deb.jpg" alt="">
+              <div class="hover-overlay"></div>
+              <div class="hover-2-content px-5 py-4">
+                <h4 class="hover-title text-capitalize font-weight-bold mb-0">
+                  sake
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
