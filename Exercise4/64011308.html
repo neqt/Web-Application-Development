@@ -40,13 +40,13 @@
       function changeColorButton() {
         const currentColor = dateTimeButton.style.backgroundColor;
         const currentIndex = backgroundColor.indexOf(currentColor);
-        const nextIndex = (currentIndex + 1) % backgroundColor.length;
-        const nextColor = backgroundColor[nextIndex];
-        dateTimeButton.style.backgroundColor = nextColor;
+        const nextColor = (currentIndex + 1) % backgroundColor.length;
 
-        const currenttextColor = dateTimeButton.style.color;
-        const nexttextColor = textColor[nextIndex];
-        dateTimeButton.style.color = nexttextColor;
+        const nextBgColor = backgroundColor[nextColor];
+        dateTimeButton.style.backgroundColor = nextBgColor;
+
+        const nextTextColor = textColor[nextColor];
+        dateTimeButton.style.color = nextTextColor;
       }
 
       function displayDate() {
