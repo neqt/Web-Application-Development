@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div id="maincontainer"></div>
+    <script>
+      const maincontainer = document.getElementById('maincontainer');
+
+      //Exercise 04: JavaScript&DOM
+      const header = document.createElement('h2');
+      header.textContent = 'Exercise 04: JavaScript&DOM';
+      maincontainer.appendChild(header);
+
+      //Click me to display Date and Time
+      const datecontainer = document.createElement('div');
+      datecontainer.style.height = '50px';
+      maincontainer.appendChild(datecontainer);
+
+      const dateTimeButton = document.createElement('button');
+      dateTimeButton.setAttribute('id', 'myButton')
+      dateTimeButton.textContent = 'Click me to display Date and Time';
+      datecontainer.appendChild(dateTimeButton);
+
+      const backgroundColor = [
+        'rgb(174, 135, 122)',
+        'rgb(195, 193, 171)',
+        'rgb(240, 222, 208)',
+        'rgb(231, 229, 217)',
+        'rgb(217, 191, 177)',
+        'rgb(94, 89, 70)',
+      ];
+      const textColor = [
+        'rgb(102, 71, 60)',
+        'rgb(119, 117, 94)',
+        'rgb(75, 53, 37)',
+        'rgb(140, 129, 67)',
+        'rgb(125, 84, 61)',
+        'rgb(225, 218, 193)',
+      ];
+
+      const displayOnButton = document.querySelector('#myButton');
+
+      function changeColorButton() {
+        const currentColor = dateTimeButton.style.backgroundColor;
+        const currentIndex = backgroundColor.indexOf(currentColor);
+        const nextIndex = (currentIndex + 1) % backgroundColor.length;
+        const nextColor = backgroundColor[nextIndex];
+        dateTimeButton.style.backgroundColor = nextColor;
+
+        const currenttextColor = dateTimeButton.style.color;
+        const nexttextColor = textColor[nextIndex];
+        dateTimeButton.style.color = nexttextColor;
+      }
+
+      function displayDate() {
+        const now = new Date()
+        displayOnButton.textContent = now
+      }
+
+      const worker = new Worker('worker.js');
+      worker.onmessage = function (event) {
+        if (event.data === 'changColor') {
+          changeColorButton();
+        } else {
+          displayOnButton.textContent = event.data;
+        }
+      };
+
+      isWorked = false;
+      displayOnButton.addEventListener('click', function () {
+        if (!isWorked) {
+          setTimeout(displayDate(), 0)
+          displayOnButton.style.position = 'fixed'
+          displayOnButton.style.top = '0px'
+          displayOnButton.style.right = '0px'
+          worker.postMessage('start');
+          isWorked = true
+        } else {
+          dateTimeButton.style.position = 'static';
+          worker.postMessage('stop');
+          isWorked = false
+        }
+      });
+
+      //Personal Info
+      const personalcontainer = document.createElement('div');
+      maincontainer.appendChild(personalcontainer);
+
+      const personalLink = document.createElement('a');
+      personalLink.textContent = 'Personal Info';
+      personalLink.href = '#';
+      personalLink.style.color = 'rgb(142, 107, 31)';
+      personalcontainer.appendChild(personalLink);
+
+      const personalInfo = document.createElement('ul');
+      personalInfo.hidden = true;
+      personalcontainer.appendChild(personalInfo);
+
+      const personalName = document.createElement('li');
+      personalName.textContent = 'Supitcha Pulsiri, ID: 64011308';
+      personalInfo.appendChild(personalName);
+
+      const personalSubject = document.createElement('li');
+      personalSubject.textContent = 'Subject: Web Application Development';
+      personalInfo.appendChild(personalSubject);
+
+      const personalSemester = document.createElement('li');
+      personalSemester.textContent = 'Semester: 2/2565';
+      personalInfo.appendChild(personalSemester);
+
+      personalLink.onmouseover = () => {
+        personalLink.style.color = 'rgb(233, 202, 134)';
+        personalLink.style.background = 'rgb(82, 13, 13)';
+      };
+
+      personalLink.onmouseout = () => {
+        personalLink.style.color = 'rgb(142, 107, 31)';
+        personalLink.style.background = 'transparent';
+      };
+
+      personalLink.onclick = () => {
+        personalInfo.hidden = !personalInfo.hidden;
+      };
+
+      //Snapshots
+      const snapcontainer = document.createElement('div');
+      maincontainer.appendChild(snapcontainer);
+
+      const snapText = document.createElement('h1');
+      snapText.textContent = 'Snapshots';
+      snapcontainer.appendChild(snapText);
+
+      const snapshots = document.createElement('ul');
+      snapshots.style.cursor = 'pointer';
+      snapcontainer.appendChild(snapshots);
+
+      const snapFireworks = document.createElement('li');
+      const fireworksLink = document.createElement('a');
+      fireworksLink.textContent = 'Fireworks';
+      fireworksLink.href = '#';
+      snapFireworks.appendChild(fireworksLink);
+      snapshots.appendChild(snapFireworks);
+
+      const snapCrest = document.createElement('li');
+      const crestLink = document.createElement('a');
+      crestLink.textContent = 'Crest';
+      crestLink.href = '#';
+      snapCrest.appendChild(crestLink);
+      snapshots.appendChild(snapCrest);
+
+      const snapAction = document.createElement('li');
+      const actionLink = document.createElement('a');
+      actionLink.textContent = 'Action';
+      actionLink.href = '#';
+      snapAction.appendChild(actionLink);
+      snapshots.appendChild(snapAction);
+
+      const snapBuffalo = document.createElement('li');
+      const buffaloLink = document.createElement('a');
+      buffaloLink.textContent = 'Buffalo';
+      buffaloLink.href = '#';
+      snapBuffalo.appendChild(buffaloLink);
+      snapshots.appendChild(snapBuffalo);
+
+      const snapImg = document.createElement('img');
+      snapImg.src =
+        'https://i.pinimg.com/564x/31/65/45/3165457df3aae172e536385283f09d02.jpg';
+      snapImg.style.width = '30%';
+      snapcontainer.appendChild(snapImg);
+
+      fireworksLink.addEventListener('click', () => {
+        snapImg.src =
+          'https://i.pinimg.com/564x/7a/88/95/7a8895b1e487121a063d77fe70bd6899.jpg';
+      });
+      crestLink.addEventListener('click', () => {
+        snapImg.src =
+          'https://i.pinimg.com/236x/12/f4/f3/12f4f38331fa750b9daae4d9e39eeb17.jpg';
+      });
+      actionLink.addEventListener('click', () => {
+        snapImg.src =
+          'https://i.pinimg.com/564x/a6/64/be/a664be9c11b6af13de11a8885e1dfee1.jpg';
+      });
+      buffaloLink.addEventListener('click', () => {
+        snapImg.src =
+          'https://i.pinimg.com/736x/12/62/c3/1262c3dcb9cb6be993420bbec5e4447e.jpg';
+      });
+    </script>
+  </body>
+</html>
