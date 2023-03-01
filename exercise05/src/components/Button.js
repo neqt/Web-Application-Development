@@ -2,17 +2,17 @@ import React from 'react';
 import './Button.css';
 
 const Button = (props) => {
-  function name() {
+  function isVote() {
     if (props.value === 'Vote') {
-      props.catDoll(1);
-    } else {
-      props.catDoll(-1);
+      props.callBack(1);
+    } else if (props.value === 'Unvote') {
+      props.callBack(-1);
     }
   }
 
   return (
     <div>
-      <button onClick={Button}>Click to {props.value}</button>
+      <button onClick={() => isVote()}>Click to {props.value}</button>
     </div>
   );
 };
