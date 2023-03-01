@@ -1,7 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 1000px;
+  width: 60%;
   height: auto;
   border: 2px solid rgb(54, 54, 48);
   border-radius: 12px;
@@ -20,7 +20,7 @@
 
 .food-img,
 img {
-  width: 200px;
+  width: 250px;
   float: right;
 }
 

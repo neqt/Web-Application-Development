@@ -6,14 +6,14 @@ const Card = (props) => {
   const [count, setCount] = useState(0);
 
   function countVote(value) {
-    if (value >= 0 || value <= 10) {
+    if(count === 0 && value === -1){
+      return alert("Cannot unvote")
+    }
+    else if(count === 10 && value === 1){
+      return alert("Cannot Vote more")
+    }
+    else {
       setCount((prevCount) => prevCount + value);
-    } else {
-      if (value < 0) {
-        alert('Cannot unvote');
-      } else if (value > 10) {
-        alert('Cannot Vote more');
-      }
     }
   }
 
